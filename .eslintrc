@@ -1,0 +1,57 @@
+{
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended"
+	],
+	"plugins": [
+		"react",
+		"prettier"
+	],
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true,
+			"legacyDecorators": true
+		}
+	},
+	"parser": "babel-eslint",
+	"env": {
+		"node": true,
+		"browser": true,
+		"es6": true
+	},
+	"globals": {},
+	"rules": {
+		"prettier/prettier": "error",
+		"quotes": [
+			"error",
+			"single"
+		],
+		"no-console": [
+			"warn",
+			{
+				"allow": [
+					"warn",
+					"error"
+				]
+			}
+		],
+		"arrow-parens": [
+			"error",
+			"always"
+		],
+		"react/prop-types": "off",
+		"jsx-quotes": [
+			"error",
+			"prefer-single"
+    ],
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ]
+	}
+}
