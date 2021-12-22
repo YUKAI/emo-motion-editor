@@ -232,7 +232,6 @@ ipcMain.handle('app-window-show-api-login', (event, config) => {
             width: 1024,
             height: 768,
             parent: browserWindow,
-            modal: true,
             autoHideMenuBar: true,
             webPreferences: {
                 devTools: false,
@@ -253,7 +252,6 @@ ipcMain.handle('app-window-show-api-login', (event, config) => {
                     tosPopup = new BrowserWindow({
                         show: false,
                         parent: loginWindow,
-                        modal: true,
                         autoHideMenuBar: true,
                         webPreferences: {
                             devTools: false,
@@ -302,7 +300,6 @@ ipcMain.handle('app-window-show-api-login', (event, config) => {
             });
             loginWindow.webContents.on('will-navigate', (event, navUrl) => {
                 var c_url = new nodeUrl.URL(navUrl);
-                console.log("Will navigate to:", c_url);
                 if (c_url.href === config.termsUrl) {
                     event.preventDefault();
                     show_tos(c_url.href);
@@ -313,7 +310,6 @@ ipcMain.handle('app-window-show-api-login', (event, config) => {
             });
             loginWindow.webContents.on('will-redirect', (event, navUrl, isInPlace, isMainFrame, frameProcessId, frameRoutingId) => {
                 var c_url = new nodeUrl.URL(navUrl);
-                console.log("Will redirect to:", c_url);
                 authorize_callback(c_url);
             });
             loginWindow.on('close', () => {
