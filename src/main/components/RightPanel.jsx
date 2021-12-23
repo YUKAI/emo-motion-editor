@@ -517,6 +517,8 @@ export default class RightPanel extends Component {
         return (
             <div
                 className={css({
+                    display: 'flex',
+                    flexDirection: 'column',
                     width: `calc(100% - ${leftPanelWidth +
                         VERTICAL_BAR_WIDTH}px)`,
                     position: 'relative'
@@ -638,7 +640,13 @@ export default class RightPanel extends Component {
                         </Scrollbars>
                     </div>
                 </div>
-                {this.renderKeyframeSettings()}
+                <div
+                    className={css({
+                        flexGrow: 1,
+                    })}
+                >
+                    {this.renderKeyframeSettings()}
+                </div>
             </div>
         );
     }
